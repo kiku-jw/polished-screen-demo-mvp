@@ -1,0 +1,23 @@
+{
+  "name": "polished-screen-demo-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Validation MVP for turning rough screen recordings into polished SaaS demo/tutorial MP4s.",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "ALLOW_MOCK_PAYMENTS=1 node src/server.js",
+    "test": "node --test tests/*.test.js",
+    "record:jw": "node scripts/record-jw-ukraine.js",
+    "record:jw:ru": "node scripts/record-jw-ukraine.js ru",
+    "record:jw:hu": "node scripts/record-jw-ukraine.js hu",
+    "record:jw:ro": "node scripts/record-jw-ukraine.js ro"
+  },
+  "devDependencies": {
+    "playwright": "1.59.1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "formidable": "^3.5.4",
+    "stripe": "^22.2.0"
+  }
+}

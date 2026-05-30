@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PolishMP4 - rough screen recording to polished demo MP4</title>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark"></span>
+        <span>PolishMP4</span>
+      </a>
+      <nav class="nav">
+        <a href="/screen-recording-to-tutorial">Examples</a>
+        <a href="/admin">Admin</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="workspace">
+        <div class="hero-copy">
+          <p class="eyebrow">Validation MVP</p>
+          <h1>Turn a rough screen recording into a polished SaaS demo MP4.</h1>
+          <p class="lede">Upload a short product walkthrough. Get a watermarked preview with clean framing, focus highlights, chapter callouts, and a paid clean export.</p>
+          <div class="proof-row">
+            <span>90 sec preview</span>
+            <span>$19 clean export</span>
+            <span>No account</span>
+          </div>
+        </div>
+
+        <form id="uploadForm" class="upload-panel">
+          <div class="field">
+            <label for="recording">Screen recording</label>
+            <input id="recording" name="recording" type="file" accept=".mp4,.webm,.mov,video/mp4,video/webm,video/quicktime" required>
+          </div>
+
+          <div class="grid-two">
+            <div class="field">
+              <label for="productName">Product name</label>
+              <input id="productName" name="productName" type="text" placeholder="Acme CRM">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="founder@example.com">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="title">Video title</label>
+            <input id="title" name="title" type="text" placeholder="New pipeline view">
+          </div>
+
+          <div class="field">
+            <label for="steps">Step callouts</label>
+            <textarea id="steps" name="steps" rows="5" placeholder="Open the dashboard&#10;Filter active deals&#10;Share the clean report"></textarea>
+          </div>
+
+          <button class="primary" type="submit">
+            <span class="button-icon">↑</span>
+            Generate preview
+          </button>
+
+          <p id="uploadNote" class="note"></p>
+        </form>
+      </section>
+
+      <section class="visual-band">
+        <div class="comparison">
+          <div class="demo-frame raw">
+            <div class="browser-bar"><span></span><span></span><span></span></div>
+            <div class="demo-grid">
+              <div class="demo-sidebar"></div>
+              <div class="demo-content">
+                <div></div><div></div><div></div><div></div>
+              </div>
+            </div>
+            <p>Raw recording</p>
+          </div>
+          <div class="demo-frame polished">
+            <div class="browser-bar"><span></span><span></span><span></span></div>
+            <div class="demo-grid">
+              <div class="demo-sidebar"></div>
+              <div class="demo-content">
+                <div></div><div class="focus-box"></div><div></div><div></div>
+              </div>
+            </div>
+            <p>Polished preview</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="jobPanel" class="job-panel" hidden>
+        <div>
+          <p class="eyebrow">Render status</p>
+          <h2 id="jobTitle">Preparing preview</h2>
+          <p id="jobStatus" class="lede small"></p>
+        </div>
+
+        <div id="previewWrap" class="preview-wrap" hidden>
+          <video id="previewVideo" controls playsinline></video>
+          <div class="paywall">
+            <div>
+              <h3>Your polished preview is ready.</h3>
+              <p>Download clean MP4 without watermark.</p>
+            </div>
+            <button id="checkoutButton" class="primary" type="button">$19 clean export</button>
+          </div>
+          <button id="mockPayButton" class="secondary" type="button" hidden>Dev unlock clean export</button>
+        </div>
+
+        <div id="downloadWrap" class="download-wrap" hidden>
+          <a id="downloadLink" class="primary link-button" href="#">Download clean MP4</a>
+          <div class="feedback">
+            <button data-feedback="usable">Usable</button>
+            <button data-feedback="needs_editing">Needs editing</button>
+            <button data-feedback="not_better">Not better</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

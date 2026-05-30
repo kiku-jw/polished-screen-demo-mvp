@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PolishMP4 admin</title>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/"><span class="brand-mark"></span><span>PolishMP4</span></a>
+      <nav class="nav"><a href="/">Upload</a></nav>
+    </header>
+    <main>
+      <section class="job-panel">
+        <p class="eyebrow">Admin</p>
+        <h1>Jobs</h1>
+        <div id="adminList" class="admin-list"></div>
+      </section>
+    </main>
+    <script>
+      const params = new URLSearchParams(location.search);
+      fetch(`/api/admin/jobs${params.get('key') ? `?key=${params.get('key')}` : ''}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const list = document.querySelector('#adminList');
+          if (data.error) {
+            list.textContent = data.error;
+            return;
+          }
+          list.innerHTML = data.jobs.map((job) => `
+            <article class="upload-panel" style="margin-bottom:14px;box-shadow:none">
+              <h3>${escapeHtml(job.title || job.productName || job.id)}</h3>
+              <p class="note">${job.state} - ${job.source ? job.source.originalFilename : ''}</p>
+              <p class="note">Duration: ${job.metadata ? Math.round(job.metadata.duration) : '?'}s - Render: ${job.renderDurationMs || 0}ms - Paid: ${job.paid}</p>
+            </article>
+          `).join('');
+        });
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, (char) => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[char]));
+      }
+    </script>
+  </body>
+</html>

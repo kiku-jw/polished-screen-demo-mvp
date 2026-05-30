@@ -1,0 +1,25 @@
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Local runtime state and generated media
+data/
+out/
+
+# Local automation/debug artifacts
+.omx/
+.playwright-cli/
+.playwright-mcp/
+polishmp4-home.png
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
