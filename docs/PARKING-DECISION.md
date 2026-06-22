@@ -24,13 +24,13 @@ We are temporarily parking the browser walkthrough video product after MVP0.
 6. AI platform capability may move fast.
    Official agent/browser/video tooling from major AI providers could reduce the implementation burden later. Waiting may make the product cheaper to build.
 
-7. Nick has better near-term ROI options.
+7. Simpler near-term ROI options are available.
    For a first money-focused project, a simpler wedge with lower infra cost, less QA risk, and clearer distribution may be a better use of time.
 
 ## What We Keep
 
 - MVP0 code for upload-based polished MP4 previews.
-- The JW.org browser tutorial workflow as proof that agentic walkthrough production is possible.
+- The related browser tutorial workflow as proof that agentic walkthrough production is possible.
 - Product insight: the stronger opportunity is likely "written browser task to polished walkthrough video", not just "raw MP4 polish".
 
 ## Reopen Criteria

@@ -14,8 +14,8 @@ Open `http://localhost:4321`.
 `npm run dev` enables local mock payments so the full preview -> checkout -> clean export path can be tested without Stripe keys. For real payments, set:
 
 ```bash
-STRIPE_SECRET_KEY=sk_live_or_test_key
-STRIPE_WEBHOOK_SECRET=whsec_key
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
 BASE_URL=https://your-domain.example
 ALLOW_MOCK_PAYMENTS=0
 ```
@@ -40,3 +40,7 @@ Smoke-test render locally:
 ffmpeg -y -f lavfi -i testsrc2=size=1280x720:rate=30 -f lavfi -i sine=frequency=880:sample_rate=48000 -t 4 -c:v libx264 -pix_fmt yuv420p -c:a aac data/tmp/sample-upload.mp4
 curl -F recording=@data/tmp/sample-upload.mp4 -F productName='Demo CRM' -F title='Pipeline walkthrough' -F $'steps=Open dashboard\nFilter deals\nExport report' -F visitorId='cli-smoke' -F sourcePage='/' http://localhost:4321/api/uploads/complete
 ```
+
+## License
+
+MIT.
