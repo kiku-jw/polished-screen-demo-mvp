@@ -1,7 +1,5 @@
 # PolishMP4 MVP
 
-> **Status:** Parked validation MVP. Kept as a public reference; no active development is planned.
-
 Validation MVP for turning a rough screen recording into a polished SaaS demo/tutorial MP4.
 
 ## Run
